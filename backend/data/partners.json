@@ -1,0 +1,62 @@
+[
+  {
+    "id": "p1",
+    "name": "Karnataka SC Corporation (SCA)",
+    "type": "SCA",
+    "lat": 12.9716,
+    "lng": 77.5946,
+    "city": "Bengaluru",
+    "schemesHandled": ["micro_finance", "term_loan"],
+    "highNPA": false
+  },
+  {
+    "id": "p2",
+    "name": "Canara Bank - MG Road Branch (PSB)",
+    "type": "PSB",
+    "lat": 12.9758,
+    "lng": 77.6045,
+    "city": "Bengaluru",
+    "schemesHandled": ["term_loan", "education_loan"],
+    "highNPA": false
+  },
+  {
+    "id": "p3",
+    "name": "Karnataka Vikas Grameena Bank (RRB)",
+    "type": "RRB",
+    "lat": 13.0012,
+    "lng": 77.5710,
+    "city": "Bengaluru",
+    "schemesHandled": ["micro_finance"],
+    "highNPA": true
+  },
+  {
+    "id": "p4",
+    "name": "Sabri Trust NBFC-MFI",
+    "type": "NBFC-MFI",
+    "lat": 12.9352,
+    "lng": 77.6146,
+    "city": "Bengaluru",
+    "schemesHandled": ["micro_finance", "term_loan"],
+    "highNPA": false
+  },
+  {
+    "id": "p5",
+    "name": "State Bank of India - Jayanagar (PSB)",
+    "type": "PSB",
+    "lat": 12.9250,
+    "lng": 77.5938,
+    "city": "Bengaluru",
+    "schemesHandled": ["education_loan", "term_loan"],
+    "highNPA": false
+  },
+  {
+    "id": "p6",
+    "name": "Ujjivan Small Finance (NBFC-MFI)",
+    "type": "NBFC-MFI",
+    "lat": 12.9611,
+    "lng": 77.6387,
+    "city": "Bengaluru",
+    "schemesHandled": ["micro_finance"],
+    "highNPA": true
+  }
+]

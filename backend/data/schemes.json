@@ -1,0 +1,38 @@
+[
+  {
+    "id": "micro_finance",
+    "name": "Micro Finance Scheme",
+    "type": "project",
+    "minCost": 0,
+    "maxCost": 140000,
+    "maxIncome": 500000,
+    "interestRate": 6.5,
+    "moratoriumMonths": 3,
+    "coveragePercent": 90,
+    "description": "For small-scale projects and micro-enterprises."
+  },
+  {
+    "id": "term_loan",
+    "name": "Term Loan Scheme",
+    "type": "project",
+    "minCost": 140001,
+    "maxCost": 5000000,
+    "maxIncome": 500000,
+    "interestRate": 8,
+    "moratoriumMonths": 6,
+    "coveragePercent": 90,
+    "description": "For larger business/project financing needs."
+  },
+  {
+    "id": "education_loan",
+    "name": "Educational Loan Scheme",
+    "type": "education",
+    "minCost": 0,
+    "maxCost": 2000000,
+    "maxIncome": 500000,
+    "interestRate": 6.5,
+    "moratoriumMonths": 12,
+    "coveragePercent": 90,
+    "description": "For higher education / professional courses."
+  }
+]
