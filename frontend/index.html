@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scheme Sarathi — SC Credit Scheme Matcher</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<header class="bg-indigo-700 text-white py-5 px-6 shadow">
+  <h1 class="text-2xl font-bold">Scheme Sarathi</h1>
+  <p class="text-indigo-100 text-sm">AI-Driven Scheme Matching for SC Entrepreneurs & Students — MoSJE</p>
+</header>
+
+<main class="max-w-3xl mx-auto p-5 space-y-8">
+
+  <!-- STEP 1: Recommender -->
+  <section class="bg-white rounded-xl shadow p-6">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-semibold">1. Find your scheme</h2>
+      <button id="micBtn" title="Speak your details instead of typing"
+        class="text-sm bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full border border-indigo-200 hover:bg-indigo-100">
+        🎤 Speak instead
+      </button>
+    </div>
+
+    <form id="recommendForm" class="grid gap-4 sm:grid-cols-2">
+      <div class="sm:col-span-2">
+        <label class="block text-sm font-medium mb-1">What is this loan for?</label>
+        <select id="projectType" class="w-full border rounded-lg p-2">
+          <option value="business">Business / Project</option>
+          <option value="education">Education</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Estimated cost (₹)</label>
+        <input id="cost" type="number" required placeholder="e.g. 800000" class="w-full border rounded-lg p-2" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Annual family income (₹)</label>
+        <input id="income" type="number" required placeholder="e.g. 300000" class="w-full border rounded-lg p-2" />
+      </div>
+      <div class="sm:col-span-2">
+        <button type="submit" class="bg-indigo-700 text-white px-5 py-2 rounded-lg hover:bg-indigo-800">
+          Recommend my scheme
+        </button>
+      </div>
+    </form>
+
+    <div id="recommendResult" class="mt-5 hidden"></div>
+  </section>
+
+  <!-- STEP 2: EMI Calculator -->
+  <section class="bg-white rounded-xl shadow p-6">
+    <h2 class="text-lg font-semibold mb-4">2. Calculate your EMI</h2>
+    <form id="calcForm" class="grid gap-4 sm:grid-cols-2">
+      <div>
+        <label class="block text-sm font-medium mb-1">Loan amount (₹)</label>
+        <input id="principal" type="number" required class="w-full border rounded-lg p-2" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Interest rate (% p.a.)</label>
+        <input id="rate" type="number" step="0.1" required class="w-full border rounded-lg p-2" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Tenure (months)</label>
+        <input id="tenure" type="number" required class="w-full border rounded-lg p-2" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Moratorium (months)</label>
+        <input id="moratorium" type="number" value="0" class="w-full border rounded-lg p-2" />
+      </div>
+      <div class="sm:col-span-2">
+        <button type="submit" class="bg-indigo-700 text-white px-5 py-2 rounded-lg hover:bg-indigo-800">
+          Calculate EMI
+        </button>
+      </div>
+    </form>
+    <div id="calcResult" class="mt-5 hidden"></div>
+  </section>
+
+  <!-- STEP 3: Partner Locator -->
+  <section class="bg-white rounded-xl shadow p-6">
+    <h2 class="text-lg font-semibold mb-4">3. Find a nearby Channel Partner</h2>
+    <button id="locateBtn" class="bg-indigo-700 text-white px-5 py-2 rounded-lg hover:bg-indigo-800">
+      Use my location
+    </button>
+    <div id="map" class="mt-4 h-72 rounded-lg hidden"></div>
+    <ul id="partnerList" class="mt-4 space-y-2"></ul>
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
