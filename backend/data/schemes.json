@@ -1,38 +1,175 @@
-[
-  {
-    "id": "micro_finance",
-    "name": "Micro Finance Scheme",
-    "type": "project",
-    "minCost": 0,
-    "maxCost": 140000,
-    "maxIncome": 500000,
-    "interestRate": 6.5,
-    "moratoriumMonths": 3,
-    "coveragePercent": 90,
-    "description": "For small-scale projects and micro-enterprises."
+{
+  "schemes": [
+    {
+      "scheme_id": "NSFDC_MFS",
+      "name": "Micro Finance Scheme (MFS)",
+      "provider": "NSFDC",
+      "scheme_type": "project_loan",
+      "eligible_categories": ["SC"],
+      "eligible_entities": ["Individual", "Partnership Firm", "Cooperative Society"],
+      "max_annual_family_income": 500000,
+      "project_cost_min": 0,
+      "project_cost_max": 140000,
+      "loan_percent_of_project": 90,
+      "loan_max": 125000,
+      "interest_rate_ca_percent": 2.5,
+      "interest_rate_beneficiary_percent": 6.5,
+      "repayment_period_months": 36,
+      "moratorium_months": 3,
+      "notes": "Repaid in quarterly instalments."
+    },
+    {
+      "scheme_id": "NSFDC_TERM_LOAN",
+      "name": "Term Loan",
+      "provider": "NSFDC",
+      "scheme_type": "project_loan",
+      "eligible_categories": ["SC"],
+      "eligible_entities": ["Individual", "Partnership Firm", "Cooperative Society"],
+      "max_annual_family_income": 500000,
+      "project_cost_min": 140000,
+      "project_cost_max": 5000000,
+      "loan_percent_of_project": 90,
+      "loan_min": 125000,
+      "loan_max": 4500000,
+      "interest_rate_ca_percent": 4,
+      "interest_rate_beneficiary_percent": 8,
+      "repayment_period_months": 84,
+      "moratorium_months": 6,
+      "moratorium_months_exception": {
+        "activities": ["plantation", "construction"],
+        "moratorium_months": 12
+      },
+      "notes": "Repaid in quarterly instalments within seven years."
+    },
+    {
+      "scheme_id": "NSFDC_AAJEEVIKA",
+      "name": "Aajeevika Micro-Finance Yojana",
+      "provider": "NSFDC",
+      "scheme_type": "project_loan",
+      "channel": "NBFC-MFI",
+      "eligible_categories": ["SC"],
+      "eligible_entities": ["Individual"],
+      "max_annual_family_income": 500000,
+      "project_cost_min": 0,
+      "project_cost_max": 140000,
+      "loan_percent_of_project": 90,
+      "loan_max": 125000,
+      "interest_rate_ca_percent": 5,
+      "interest_rate_beneficiary_percent": 15,
+      "repayment_period_months": 36,
+      "moratorium_months": 3,
+      "notes": "Delivered via NBFC-MFIs specifically, not general SCAs/CAs."
+    },
+    {
+      "scheme_id": "NSFDC_UNY",
+      "name": "Udyam Nidhi Yojana (UNY)",
+      "provider": "NSFDC",
+      "scheme_type": "project_loan",
+      "eligible_categories": ["SC"],
+      "eligible_entities": ["Individual", "Cooperative Society"],
+      "max_annual_family_income": 500000,
+      "project_cost_min": 0,
+      "project_cost_max": 500000,
+      "loan_percent_of_project": 90,
+      "loan_max": 450000,
+      "interest_rate_variants": [
+        { "channel": "Cooperative Bank/Society", "ca_percent": 5, "beneficiary_percent": 13 },
+        { "channel": "Small Finance Bank", "ca_percent": 5, "beneficiary_percent": 15 }
+      ],
+      "repayment_period_months": 60,
+      "moratorium_months": 3,
+      "notes": "Repaid quarterly or half-yearly."
+    },
+    {
+      "scheme_id": "NSFDC_ELS",
+      "name": "Educational Loan Scheme (ELS)",
+      "provider": "NSFDC",
+      "scheme_type": "education_loan",
+      "eligible_categories": ["SC"],
+      "eligible_entities": ["Individual"],
+      "max_annual_family_income": 500000,
+      "max_course_fee": 4000000,
+      "loan_percent_of_course_fee": 90,
+      "coverage": "domestic_and_abroad",
+      "interest_rate_ca_percent": 2.5,
+      "interest_rate_beneficiary_percent": 6.5,
+      "repayment_period_months_not_started": 144,
+      "repayment_period_months_started": 120,
+      "moratorium_not_started": "course_period_plus_12_months",
+      "moratorium_started_months": 6,
+      "eligible_courses": [
+        "Engineering", "Architecture", "Medical", "Biotechnology/Microbiology/Clinical Technology",
+        "Pharmacy", "Dental", "Physiotherapy", "Pathology", "Nursing", "Information Technology",
+        "Management", "Hotel Management & Catering Technology", "Law", "Education",
+        "Physical Education", "Journalism & Mass Communication", "Geriatric Care", "Midwifery",
+        "Laboratory Technician", "Chartered Accountancy", "Cost Accountancy", "Company Secretaryship",
+        "Actuarial Sciences", "AMIE/Electronics & Telecommunication", "Doctoral Studies (M.Phil/PhD)"
+      ]
+    },
+    {
+      "scheme_id": "NBCFDC_INDIVIDUAL",
+      "name": "NBCFDC Individual Loan",
+      "provider": "NBCFDC",
+      "scheme_type": "project_loan",
+      "eligible_categories": ["OBC"],
+      "eligible_entities": ["Individual"],
+      "max_annual_family_income": 500000,
+      "loan_max": 2500000,
+      "loan_percent_of_project": 85,
+      "beneficiary_share_percent": 15,
+      "interest_rate_tiers": [
+        { "purpose": "income_generating", "loan_max": 125000, "nbcfdc_to_channel_percent": 4, "channel_to_beneficiary_percent": 7, "repayment_years": 4 },
+        { "purpose": "income_generating", "loan_min": 125000, "loan_max": 2500000, "nbcfdc_to_channel_percent": 5, "channel_to_beneficiary_percent": 8, "repayment_years": 7 },
+        { "purpose": "education", "loan_max": 2500000, "nbcfdc_to_channel_percent": 5, "channel_to_beneficiary_percent": 8, "repayment_years": 10, "moratorium_years": 5, "moratorium_included_in_repayment_years": true }
+      ],
+      "timely_payment_rebate_percent": 1,
+      "notes": "Rebate split equally between channel partner and beneficiary."
+    },
+    {
+      "scheme_id": "NBCFDC_GROUP_SHG",
+      "name": "NBCFDC Group Loan (SHG)",
+      "provider": "NBCFDC",
+      "scheme_type": "group_loan",
+      "eligible_categories": ["OBC"],
+      "shg_conditions": {
+        "min_obc_member_percent": 60,
+        "other_eligible_member_categories": ["SC", "ST", "Minorities", "PwD"],
+        "max_members_per_shg": 20
+      },
+      "max_annual_family_income": 500000,
+      "loan_max_per_shg": 2500000,
+      "loan_max_per_beneficiary": 125000,
+      "loan_percent_of_project": 90,
+      "channel_variants": [
+        { "channel": "SCA_or_Bank", "nbcfdc_to_channel_percent": 4, "channel_to_beneficiary_percent": 7, "repayment_years": 3 },
+        { "channel": "NBFC-MFI_or_similar_FI", "nbcfdc_to_channel_percent": 6, "channel_to_beneficiary_percent": 16, "repayment_years": null }
+      ],
+      "timely_payment_rebate_percent": 1,
+      "implemented_by": ["Channel Partners", "NBFC-MFI", "similar Financial Institutions"],
+      "notes": "Implemented in both rural and urban areas."
+    }
+  ],
+  "common_eligibility": {
+    "caste_requirement": "SC",
+    "entity_types": ["Individual", "Partnership Firm", "Cooperative Society"],
+    "entity_conditions": {
+      "all_members_must_be_sc": true,
+      "income_ceiling_per_member": 500000
+    },
+    "income_criteria_effective_date": "2026-01-07",
+    "skill_development_programs_income_criterion": false,
+    "application_channels": ["PM-SURAJ portal (online)", "State Channelizing Agencies / Channelizing Agencies (offline)"],
+    "direct_applicant_contact_allowed": false
   },
-  {
-    "id": "term_loan",
-    "name": "Term Loan Scheme",
-    "type": "project",
-    "minCost": 140001,
-    "maxCost": 5000000,
-    "maxIncome": 500000,
-    "interestRate": 8,
-    "moratoriumMonths": 6,
-    "coveragePercent": 90,
-    "description": "For larger business/project financing needs."
+  "nbcfdc_common_eligibility": {
+    "category_requirement": "OBC (Backward Classes as notified by Central/State Govt.)",
+    "income_ceiling_per_family": 500000,
+    "application_channels": ["NBCFDC online registration portal", "District Collector / District Manager of Channel Partner (offline)"],
+    "required_documents": ["Caste Certificate", "Income Certificate (or self-certified, endorsed by gazetted officer/Branch Manager)"]
   },
-  {
-    "id": "education_loan",
-    "name": "Educational Loan Scheme",
-    "type": "education",
-    "minCost": 0,
-    "maxCost": 2000000,
-    "maxIncome": 500000,
-    "interestRate": 6.5,
-    "moratoriumMonths": 12,
-    "coveragePercent": 90,
-    "description": "For higher education / professional courses."
+  "activity_sectors": {
+    "agricultural_allied": ["Agricultural Land Purchase", "Hatcheries", "Duckery", "Goat Rearing", "Sheep Farming", "Fisheries", "Ornamental Fish Rearing", "Tractors", "Power Tillers", "Medicinal Plants Cultivation", "Honey Bee Cultivation", "Minor Irrigation", "Agricultural Implements", "Horticulture", "Sericulture", "Layers/Broilers", "Cows/Buffaloes", "Piggery", "Aquaculture", "Floriculture"],
+    "small_industries": ["Automobile Repair", "Brick Making", "Bicycle Repairing", "Bicycle Seat Cover Making", "Biogas Plant", "Candle Manufacturing", "Car Upholstery", "Cement Solid Blocks", "Coir Industry", "Carpet Manufacturing", "Copperware/Utensils", "Exercise Books & Registers", "Readymade Garments", "Ginger & Turmeric Processing", "Granite Tiles", "Handmade Paper", "Ornaments Polishing", "Stone Crushing", "Supari Processing", "Printing Press", "Furniture Making", "Flour Mill", "Soft Toys Making", "Handlooms/Powerlooms", "Embroidery/Knitting", "Woollen Garments", "Hosiery Units", "Jute Fabrics/Bags", "Leather Garments", "Leather Processing", "Leather & Rexine Articles", "Lime Kilns", "Plastic Bags Manufacturing", "Potteries", "Handicrafts", "Pouch Making", "Incense Stick Making", "Rubber Industry", "Shoe/Chappal Manufacturing", "Umbrella Making", "Fiberglass Manufacturing", "Mineral Water Bottling", "Oil Mills", "Saw Mills", "Footwear Manufacturing", "Silver Ornaments", "Bakery", "Bamboo Furniture", "Battery Making"],
+    "service_transport": ["Departmental Stores", "Beautician", "Band Party", "Fish/Meat Shops", "Petty Shops", "Diagnostic Center/Blood Bank", "Book Binding/Book Shops", "Cards Shop", "Clinical Labs", "Stationery Shops", "Cloth Merchant", "Computer Centres", "Computer Hardware & Servicing", "Dental Clinics", "Desktop Printing", "Driving School", "Eye Clinics", "Food Packing Unit", "Gas Agency", "Gem Stone Cutting & Polishing", "Photography/Videography", "Shopping Complex", "Shuttering", "Spice Grinding", "Spray Painting", "Silk Weaving", "Steel Fabrication", "Sweet Shop", "Tailoring", "Water Sports Equipment", "Chemist Shops", "Wooden/Steel Furniture", "Dhabas/Mini Hotels", "Tourist Lodge", "Automobile Repairs", "Electrical Items Shop", "Hardware Shop", "Electrical Winding", "Welding & Refrigeration", "Vegetable Vending", "Watch Repair/Sales Shop", "Bangle/Cosmetic Shop", "Digital Mixing Lab", "Seeds/Fertilizers/Pesticides Shops", "Auto Rickshaws/Auto Load Carrier", "Light Commercial Vehicles/Mini Buses", "Jeeps/Car Taxies", "Earth Movers (JCB)", "Laundry/Dry-cleaning", "Machine Shops", "Marble Polishing", "Milk Chilling Centres/Booths", "Garments Shop", "Mobile Crane", "Nursing Home/Hospitals", "Nursery School", "Passenger/Fishing Boats", "Public Address System", "Pump Set/Minor Irrigation", "Ropeway", "Sales & Servicing of Electric Items", "Supplying Unit", "Commercial Centre", "Tannery", "Tent House/Decorators", "Transport Vehicles", "Travel Agency", "TV/Audio-Video/Refrigerator/AC Repair", "Typing School", "Tyre Retreading", "Tyre Servicing & Vulcanising", "Xerox/Typing/Lamination Centre", "Internet Cafe", "Cable TV"]
   }
-]
+}
