@@ -6,7 +6,7 @@ Loan Recommendation for Marginalized Clients
 - `backend/` — Node/Express API (3 endpoints, no database, data lives in JSON files)
 - `frontend/` — plain HTML/JS/Tailwind (no build step, just open the file)
 
-## How to run (any teammate, any device)
+## How to run (any teammate)
 
 **Backend:**
 ```
